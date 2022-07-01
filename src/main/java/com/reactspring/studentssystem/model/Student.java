@@ -1,49 +1,89 @@
 package com.reactspring.studentssystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
+import java.time.LocalDate;
+
 public class Student {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
-    private String address;
+    private String email;
+    private LocalDate dob;
+    private Integer age;
 
-    public Student() {}
-
-    public int getId() {  return id;  }
-
-    public boolean setId(int id) {
-        if (id >= 0){
-            this.id = id;
-            return true;
-         } else
-             return false;
-
+    public Student() {
     }
 
-    public String getName() {  return name;  }
-
-    public boolean setName(String name) {
-        if(!name.isEmpty()){
-            this.name = name;
-            return true;
-        } else
-            return false;
+    public Student(Long id,
+                   String name,
+                   String email,
+                   LocalDate dob,
+                   Integer age) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.dob = dob;
+        this.age = age;
     }
 
-    public String getAddress() {  return address;  }
+    public Student(String name,
+                   String email,
+                   LocalDate dob,
+                   Integer age) {
+        this.name = name;
+        this.email = email;
+        this.dob = dob;
+        this.age = age;
+    }
 
-    public boolean setAddress(String address) {
-        if(!address.isEmpty()){
-            this.address = address;
-            return true;
-        } else
-            return false;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", dob=" + dob +
+                ", age=" + age +
+                '}';
     }
 }

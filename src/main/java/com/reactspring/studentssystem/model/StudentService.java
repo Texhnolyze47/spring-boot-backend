@@ -1,5 +1,6 @@
 package com.reactspring.studentssystem.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -10,16 +11,15 @@ import java.util.List;
 //en este caso se va a usar @Service por semantica
 @Service
 public class StudentService {
+
+    private  final StudentRepository studentRepository;
+    @Autowired
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
     public List<Student> getStudents(){
-        return List.of(
-                new Student(
-                        1L,
-                        "Ivan",
-                        "ivan.r@gmail.com",
-                        LocalDate.of(2001, Month.DECEMBER,14),
-                        20
-                )
-        );
+    return  studentRepository.findAll();
 
     }
 }

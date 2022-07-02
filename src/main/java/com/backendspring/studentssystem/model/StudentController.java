@@ -27,8 +27,10 @@ public class StudentController {
     public List<Student> getStudents(){
         return studentService.getStudents();
     }
-
+    // @PostMapping se usa cuando queremos agregar nuevos usuarios a nuestro sistema
     @PostMapping
+    //@RequestBody lo que hace es recibir una request de un json
+    // y hace una mapea dentro de un objeto estudiante
     public void registerNewStudent(@RequestBody Student student){
         studentService.addNewStudent(student);
     }

@@ -25,11 +25,12 @@ public class StudentService {
     }
 
     public void addNewStudent(Student student) {
-        Optional<Student> studentByEmail = studentRepository.findStudentsByEmail(student.getEmail());
-        if (studentByEmail.isPresent()) {
+        Optional<Student> studentOptional = studentRepository
+                .findStudentsByEmail(student.getEmail());
+        if (studentOptional.isPresent()) {
             throw new IllegalStateException("Este correo ya esta regsitrado");
-        } else
-            studentRepository.save(student);
+        }
+        studentRepository.save(student);
     }
 
     public void deleteStudent(Long studentId) {

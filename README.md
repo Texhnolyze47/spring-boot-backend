@@ -1,6 +1,7 @@
-## Backend Spring boot
+# Backend Spring boot
 Esta solo es una pequeña api con solo 4 endpoints.
 
+## Consultar APi
 Este ENDPOINTS solo regresa unos pocos usuarios dentro de la base de datos
 GET https://spring-api-student.herokuapp.com/api/v1/student
 

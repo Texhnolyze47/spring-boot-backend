@@ -2,18 +2,20 @@
 Esta solo es una pequeña api con solo 4 endpoints.
 
 ## Consultar API
-***
+
 Esto se puede consultar mediante PostMan o en caso tener la version ultimate de IDEA Intellij.
 
 ![generated-http](docs/img/http-generated.jpg)
+
 Una vez se haya generado el archivo, puedes copiar y pegar los comandos dentro del archivo
 
 ![http](docs/img/http-content.jpg)
+
 Solo debes dar click en el play y debe salir un output similar a este.
 ![http](docs/img/http-output.jpg)
 
 ## EndPoint
-***
+
 Este ENDPOINTS solo regresa unos pocos usuarios dentro de la base de datos
 
 `GET https://spring-api-student.herokuapp.com/api/v1/student`
